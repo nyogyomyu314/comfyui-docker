@@ -25,7 +25,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. ComfyUIのインストール
 
-RUN comfy install
+RUN comfy install --yes
 
 # 6. ポートの指定
 EXPOSE 8188
