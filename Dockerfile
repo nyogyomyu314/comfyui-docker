@@ -23,8 +23,12 @@ WORKDIR /workspace
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. ポートの指定
-EXPOSE 8888
+# 5. ComfyUIのインストール
+RUN comfy --install-completion
+RUN comfy install
 
-# 6. コンテナ起動時のデフォルトコマンド
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
+# 6. ポートの指定
+EXPOSE 8188
+
+# 7. コンテナ起動時のデフォルトコマンド
+CMD ["comfy", "start", "--listen", "0.0.0.0"]
