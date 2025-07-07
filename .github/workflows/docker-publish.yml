@@ -33,5 +33,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/music-separation:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/comfyui-docker:latest
           # ↑↑↑ ここの 'music-separation' は、あなたの好きなリポジトリ名に変更可能です
